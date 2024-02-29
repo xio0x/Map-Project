@@ -3,40 +3,6 @@ setup(1000,1000)
 speed(0)
 
 #danger
-def danger(x):
-
-    #setting turtle
-
-    penup()
-    setheading(0*x)
-    back(100*x)
-    pencolor("Red")
-    pendown()
-    width(15*x)
-
-    #triangle
-    forward(200*x)
-    setheading(120)
-    forward(200*x)
-    setheading(240)
-    forward(200*x)
-
-    #Exclamation Mark
-    penup()
-    setheading(0)
-    forward(100*x)
-    setheading(90)
-    forward(30*x)
-    pendown()
-    pencolor("black")
-    forward(1*x)
-    penup()
-    forward(25*x)
-    pendown()
-    forward(50*x)
-
-#danger(1)
-
 def curveLeft(x):
     #setting up
 
@@ -60,7 +26,6 @@ def curveLeft(x):
 
     penup()
     color("black")
-    begin_fill()
     setheading(0)
     forward((125) * x)
     setheading(90)
@@ -70,6 +35,7 @@ def curveLeft(x):
     setheading(0)
     forward(10)
     pendown()
+    begin_fill()
     setheading(90)
     pos = position()
     circle(50,90)
@@ -91,7 +57,6 @@ def curveLeft(x):
     end_fill()
     penup()
     forward(200)
-
 #curveLeft(1)
 
 
