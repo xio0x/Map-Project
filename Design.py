@@ -170,3 +170,96 @@ def railroad_crossing():
     writing()
     ht()
 #railroad_crossing():
+
+#    Code for the map
+
+setup(1500,1000)
+screensize(None, None, "#4ce32d")
+speed(0)
+
+
+def map_design():
+
+    def railroad():
+        # code for the rungs
+
+        penup()
+        goto(-700, -400)
+        pencolor("brown")
+        width(10)
+        setheading(90)
+        forward(1000)
+        penup()
+        setheading(0)
+        forward(100)
+        setheading(270)
+        pendown()
+        forward(100)
+        penup()
+        goto(-700, -400)
+        setheading(90)
+        forward(30)
+        penup()
+        setheading(0)
+        back(30)
+        for i in range(0, 16):
+            setheading(0)
+            pos = position()
+            pendown()
+            forward(130)
+            penup()
+            goto(pos)
+            setheading(90)
+            forward(50)
+
+        # code for the railroad
+        pensize(8)
+        pencolor("grey")
+        penup()
+        goto(-700,-400)
+        pendown()
+        forward(800)
+        penup()
+        goto(-620, -400)
+        pendown()
+        forward(800)
+
+    railroad()
+
+    #   function to make roads/rectangles
+
+    def road_rectangle(l, w):
+        color("light gray")
+        begin_fill()
+        forward(w)
+        left(90)
+        forward(l)
+        left(90)
+        forward(w)
+        left(90)
+        forward(l)
+        end_fill()
+    #   Making the roads
+    left(180)
+    forward(200)
+    road_rectangle(700, 60)
+    back(700)
+    left(90)
+    road_rectangle(60, 600)
+    teleport(-250,440)
+    road_rectangle(500, 60)
+    back(500)
+    right(90)
+    road_rectangle(60, 330)
+    teleport(-620, -250)
+    road_rectangle(1500, 60)
+    teleport(120,169)
+    pensize(70)
+    right(180)
+    circle(300, 90)
+    ht()
+
+    railroad()
+
+
+#map_design()
