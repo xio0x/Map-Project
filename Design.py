@@ -57,6 +57,51 @@ def curveLeft(x):
     end_fill()
     penup()
     forward(200)
+
+    #stop
+    
+    pendown()
+    color('white')
+    fillcolor('red')
+    begin_fill()
+    for i in range(8):
+            left(45)
+            forward(50)
+    end_fill()
+    penup()
+    goto(-38,-8)
+    right(120)
+    left(70)
+    forward(-55)
+    backward(5)
+    color('white')
+    write('STOP', font=('Arial', 40, 'normal', 'bold'))
+    hideturtle()
+    
+    #circle
+    
+    y = 50
+    pendown()
+    pensize(3)
+    color('#FFD700')
+    fillcolor('#228B22')
+    begin_fill()
+    circle(x)
+    end_fill()
+    penup()
+    goto(0,20)
+    pendown()
+    color('#FFD700')
+    fillcolor('#FFD700')
+    begin_fill()
+    circle(y)
+    end_fill()
+    penup()
+    hideturtle()
+    goto(-31,19)
+    color('#228B22')
+    write('H', font=('Arial', 90, 'normal'))
+
 #curveLeft(1)
 
 
