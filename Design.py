@@ -18,11 +18,14 @@ def danger(x):
     width(15*x)
 
     #triangle
+    color("red","white")
+    begin_fill()
     forward(200*x)
     setheading(120)
     forward(200*x)
     setheading(240)
     forward(200*x)
+    end_fill()
 
     #Exclamation Mark
     penup()
@@ -38,6 +41,7 @@ def danger(x):
     pendown()
     forward(50*x)
     penup()
+
 
 #END OF DANGER SIGN
 
@@ -57,12 +61,14 @@ def curveLeft(x):
     width(15*x)
 
     # triangle
-
+    color("red", "white")
+    begin_fill()
     forward(200 * x)
     setheading(120)
     forward(200 * x)
     setheading(240)
     forward(200 * x)
+    end_fill()
 
     # Curvy guy
 
@@ -168,7 +174,7 @@ def busStop(x):
 
 #END OF BUS STOP FUNCTION
 
-#NO VEHICLES SIGN
+#NO VEHICLES SIGN BY JOYAL SHAJI
 
 def no_vehicles(x):
     # draws a circle for the sign and fills it in
@@ -182,52 +188,52 @@ def no_vehicles(x):
     end_fill()
     penup()
 
-#END OF NO VEHICLES SIGNa
+#END OF NO VEHICLES SIGN
 
-#RAILROAD CROSSING SIGN
+#RAILROAD CROSSING SIGN BY JOYAL SHAJI
 
-def railroad_crossing(x):
+def railroad_crossing():
     speed(0)
-    def sign_background(x):
+
+    def sign_background():
         # code for the background and border of the sign
         penup()
-        setheading(0)
-        forward(-50*x)
-        setheading(90)
-        forward(-50*x)
+        goto(-50, -50)
         pendown()
         color("black", "white")
         begin_fill()
         pensize(5)
-        setheading(0)
-        forward(100*x)
+        forward(100)
         left(90)
-        forward(350*x)
+        forward(350)
         left(90)
-        forward(100*x)
+        forward(100)
         left(90)
-        forward(350*x)
+        forward(350)
         end_fill()
 
-    def red_strip(x):
+    def red_strip():
         # code for the red strip and fills it in
         penup()
-        color("#c1111b", "#c1111b")
-        begin_fill()
-        setheading(0)
-        forward(-50*x)
         setheading(90)
-        forward(40*x)
+        color("#c1111b", "#c1111b")
+        forward(90)
         pendown()
-        goto(50, 90)
-        left(180)
-        forward(40)
-        goto(-50, 80)
-        right(180)
-        forward(40)
+        begin_fill()
+        right(70)
+        forward(106)
+        left(70)
+        forward(45)
+        left(110)
+        forward(106)
+        left(70)
+        forward(45)
         end_fill()
-    '''
-        # code that outlines the shape in a black line to make it neater
+
+
+
+
+        """"# code that outlines the shape in a black line to make it neater
         penup()
         goto(-50, -50)
         left(90)
@@ -240,31 +246,117 @@ def railroad_crossing(x):
         left(90)
         forward(100)
         left(90)
-        forward(350)
-    '''
+        forward(350"""
+
     def writing():
         #   code for the 50 m writing
         penup()
         color("black")
-        goto(0, 255)
+        setheading(90)
+        forward(215)
+        right(90)
+        forward(50)
         write("50", True, align="center", font=("Lexend", 30, "normal"))
-        goto(0, 230)
+        right(90)
+        forward(30)
+        right(90)
+        forward(20)
         write(arg="m", move=True, align="center", font=("Lexend", 30, "normal"))
 
-    sign_background(x)
-    red_strip(x)
+    sign_background()
+    red_strip()
     writing()
     ht()
 
 #END OF RAILROAD CROSSING SIGN
 
+#RAILROADCROSSING SMALLER SIGN BY JOYAL SHAJI
+
+def railroad_crossing_small():
+    speed(0)
+
+    def sign_background_small():
+        # code for the background and border of the sign
+        penup()
+        #goto(-50, -50)
+        pendown()
+        setheading(0)
+        color("black", "white")
+        begin_fill()
+        pensize(2)
+        forward(100/2.5)
+        left(90)
+        forward(350/2.5)
+        left(90)
+        forward(100/2.5)
+        left(90)
+        forward(350/2.5)
+        end_fill()
+
+    def red_strip_small():
+        # code for the red strip and fills it in
+        penup()
+        setheading(90)
+        color("#c1111b", "#c1111b")
+        forward(90/2.5)
+        pendown()
+        begin_fill()
+        right(70)
+        forward(106/2.5)
+        left(70)
+        forward(45/2.5)
+        left(110)
+        forward(106/2.5)
+        left(70)
+        forward(45/2.5)
+        end_fill()
 
 
-#FUNCTION THAT CREATES MAP
+
+
+        """"# code that outlines the shape in a black line to make it neater
+        penup()
+        goto(-50, -50)
+        left(90)
+        pendown()
+        color("black")
+        pensize(5)
+        forward(100)
+        left(90)
+        forward(350)
+        left(90)
+        forward(100)
+        left(90)
+        forward(350"""
+
+    def writing_small():
+        #   code for the 50 m writing
+        penup()
+        color("black")
+        setheading(90)
+        forward(215/2.5)
+        right(90)
+        forward(50/2.5)
+        write("50", True, align="center", font=("Lexend", 10, "normal"))
+        right(90)
+        forward(30/2.5)
+        right(90)
+        forward(20/3)
+        write(arg="m", move=True, align="center", font=("Lexend", 10, "normal"))
+
+    sign_background_small()
+    red_strip_small()
+    writing_small()
+    ht()
+
+#END OF RAILROADCROSSING SMALLER SIGN
+
+
+#FUNCTION THAT CREATES MAP BY JOYAL SHAJI
 def map_design():
-
+    screensize(None, None, "#4ce32d")
     def railroad():
-        # code for the rungs
+        # code for the rungs by charlton
 
         penup()
         goto(-700, -400)
@@ -297,7 +389,7 @@ def map_design():
             setheading(90)
             forward(50)
 
-        # code for the railroad
+        # code for the railroad by joyal
         pensize(8)
         pencolor("grey")
         penup()
@@ -311,7 +403,7 @@ def map_design():
 
     railroad()
 
-    #   function to make roads/rectangles
+    #   function to make roads/rectangles by joyal
 
     def road_rectangle(l, w):
         color("light gray")
@@ -324,7 +416,7 @@ def map_design():
         left(90)
         forward(l)
         end_fill()
-    #   Making the roads
+    #   Making the roads (joyal)
     left(180)
     forward(200)
     road_rectangle(700, 60)
@@ -361,12 +453,11 @@ def mapSigns():
     curveLeft(.4)
     goto(-500,90)
     no_vehicles(.3)
-    goto(-530, -380)
-'''
-    railroad_crossing(.2)
-'''
+    goto(-550, -230)
+    railroad_crossing_small()
+
 #END FUNCTION TO MAKE SIGNS ON MAP
-#RAILROAD CROSSING DOESNT WORK
+
 
 #MENU
 
@@ -415,7 +506,7 @@ while True:
             goto(0, 0)
             turtle.Screen().reset()
             speed(0)
-            railroad_crossing(1)
+            railroad_crossing()
         elif decision2 == 5:
             penup()
             goto(0, 0)
@@ -438,6 +529,3 @@ False
 
 Turtle._screen.exitonclick()
 exit()
-
-
-
