@@ -1,14 +1,20 @@
+#CMSCP 131 Project 1
+#Program will allow user to show a map with signs on it, and allow the use to see each sign individually
+
+#SETUP
 import turtle
 from turtle import *
 setup(1500,1000)
 speed(0)
 global inMap
 inMap = False
-#DANGER SIGN
 
+
+#DANGER SIGN
+#Charlton
 def danger(x):
 
-    #setting turtle
+#setting turtle
 
     penup()
     setheading(0*x)
@@ -17,7 +23,7 @@ def danger(x):
     pendown()
     width(15*x)
 
-    #triangle
+#Triangle
     color("red","white")
     begin_fill()
     forward(200*x)
@@ -27,7 +33,7 @@ def danger(x):
     forward(200*x)
     end_fill()
 
-    #Exclamation Mark
+#Exclamation Mark
     penup()
     setheading(0)
     forward(100*x)
@@ -48,9 +54,9 @@ def danger(x):
 
 
 #CURVELEFT SIGN
-
+#Charlton
 def curveLeft(x):
-    # setting up
+# setting up
 
     penup()
     setheading(0)
@@ -60,7 +66,7 @@ def curveLeft(x):
     pendown()
     width(15*x)
 
-    # triangle
+# triangle
     color("red", "white")
     begin_fill()
     forward(200 * x)
@@ -70,7 +76,7 @@ def curveLeft(x):
     forward(200 * x)
     end_fill()
 
-    # Curvy guy
+# Curvy guy
 
     penup()
     color("black")
@@ -86,6 +92,7 @@ def curveLeft(x):
     begin_fill()
     setheading(90)
     pos = position()
+#determines if creating sign in or out of map
     if inMap == False:
         circle(50, 90)
     if inMap == True:
@@ -104,7 +111,8 @@ def curveLeft(x):
     setheading(270 - 45)
     forward(20*x)
     setheading(90)
-    #the circle's radious should be altered but it isn't :(
+#the circle's radious should be altered but it isn't :(
+#so the sign has the same bottom curve always since it doesn't alter the sign in any major way
     circle(25*x, 90*x)
     end_fill()
     penup()
@@ -233,24 +241,6 @@ def railroad_crossing():
         forward(45)
         end_fill()
 
-
-
-
-        """"# code that outlines the shape in a black line to make it neater
-        penup()
-        goto(-50, -50)
-        left(90)
-        pendown()
-        color("black")
-        pensize(5)
-        forward(100)
-        left(90)
-        forward(350)
-        left(90)
-        forward(100)
-        left(90)
-        forward(350"""
-
     def writing():
         #   code for the 50 m writing
         penup()
@@ -314,24 +304,6 @@ def railroad_crossing_small():
         forward(45/2.5)
         end_fill()
 
-
-
-
-        """"# code that outlines the shape in a black line to make it neater
-        penup()
-        goto(-50, -50)
-        left(90)
-        pendown()
-        color("black")
-        pensize(5)
-        forward(100)
-        left(90)
-        forward(350)
-        left(90)
-        forward(100)
-        left(90)
-        forward(350"""
-
     def writing_small():
         #   code for the 50 m writing
         penup()
@@ -358,9 +330,11 @@ def railroad_crossing_small():
 #FUNCTION THAT CREATES MAP BY JOYAL SHAJI
 def map_design():
     screensize(None, None, "#4ce32d")
-    def railroad():
-        # code for the rungs by charlton
 
+#FUNCTION THAT MAKES THE RAILROAD
+#Charlton
+
+    def railroad():
         penup()
         goto(-700, -400)
         pencolor("grey")
@@ -393,6 +367,7 @@ def map_design():
             forward(50)
 
         # code for the railroad by joyal
+        # also creates the curved road
         pensize(8)
         pencolor("grey")
         penup()
@@ -443,7 +418,7 @@ def map_design():
 #END OF FUNCTION THAT CREATES MAP
 
 #FUNCTION TO MAKE SIGNS ON MAP
-
+#Charlton
 def mapSigns():
     penup()
     goto(40,-110)
@@ -463,7 +438,10 @@ def mapSigns():
 
 
 #MENU
+#Charlton
 
+#Loops a fucntion asking for user input, ensuring that the menu will stay operable after
+#something has been drawn
 while True:
     print("Select and Option:")
     print("Display Map [1]")
