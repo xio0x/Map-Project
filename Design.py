@@ -86,7 +86,10 @@ def curveLeft(x):
     begin_fill()
     setheading(90)
     pos = position()
-    circle(50, 90)
+    if inMap == False:
+        circle(50, 90)
+    if inMap == True:
+        circle(25, 90)
     setheading(180 + 45)
     forward(20*x)
     setheading(360 - 45)
@@ -494,6 +497,7 @@ while True:
             goto(0, 0)
             turtle.Screen().reset()
             speed(0)
+            inMap = False
             curveLeft(1)
         elif decision2 == 3:
             penup()
@@ -523,7 +527,6 @@ while True:
 
     elif decision == 3:
         exit()
-False
 
 #END OF MENU
 
