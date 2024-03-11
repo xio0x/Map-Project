@@ -120,6 +120,7 @@ def curveLeft(x):
 # END OF CURVELEFT SIGN
 
 
+#Xiomara 
 #STOP SIGN
 
 def stopsign(x):
@@ -127,11 +128,13 @@ def stopsign(x):
     color('red')
     fillcolor('red')
     begin_fill()
+    #for loop to draw out the basic shape needed, identifying the number of sides and the distance between each line drawn
     for i in range(8):
         left(45)
         forward(50*x)
     end_fill()
     penup()
+    #Determines if the sign is within the map borders or not
     if inMap == False:
         goto(-38, -8)
         right(120)
@@ -153,9 +156,11 @@ def stopsign(x):
 #END OF STOP SIGN FUNCTION
 
 
+#Xiomara 
 #BUS STOP SIGN
 
 def busStop(x):
+    #Initializing the pen size, color of the first circle and size of the circle
     setheading(90)
     pendown()
     pensize(3)
@@ -166,6 +171,7 @@ def busStop(x):
     end_fill()
     penup()
     pendown()
+    #Set up for the second circle, changing the size to be smaller and centered in the middle
     setheading(0)
     forward(-15*x)
     setheading(90)
