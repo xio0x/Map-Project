@@ -123,37 +123,43 @@ def curveLeft(x):
 #Xiomara 
 #STOP SIGN
 
+#initializing the color and pen size of the sign
 def stopsign(x):
     pendown()
+    pensize(3)
     color('red')
     fillcolor('red')
     begin_fill()
+    
     #for loop to draw out the basic shape needed, identifying the number of sides and the distance between each line drawn
     for i in range(8):
-        left(45)
-        forward(50*x)
+            left(45)
+            forward(50*x)
     end_fill()
-    penup()
+    
     #Determines if the sign is within the map borders or not
     if inMap == False:
-        goto(-38, -8)
-        right(120)
+        penup()
+        goto(-47, -10)
+        right(130)
         left(70)
-        forward(-55)
-        backward(5)
+        forward(-36)
+        backward(20)
+        #text for the sign
         color('white')
-        write('STOP', font=('Arial', 30, 'normal', 'bold'))
+        write('STOP', font=('Arial', 38, 'normal', 'bold'))
+        hideturtle()
     elif inMap == True:
+        penup()
         setheading(90)
-        forward(-100 * x)
-        setheading(0)
-        forward(-220 * x)
+        forward(-50 * x)
+        setheading(1)
+        forward(-113 * x)
         color('white')
         pendown()
-        write('STOP', font=('Arial', 20, 'normal', 'bold'))
+        write('STOP', font=('Arial', 25, 'normal', 'bold'))
         penup()
-
-#END OF STOP SIGN FUNCTION
+        hideturtle()
 
 
 #Xiomara 
@@ -170,21 +176,25 @@ def busStop(x):
     circle(70*x)
     end_fill()
     penup()
-    pendown()
+    
     #Set up for the second circle, changing the size to be smaller and centered in the middle
     setheading(0)
     forward(-15*x)
+    pendown()
     setheading(90)
     color('#FFD700')
     fillcolor('#FFD700')
     begin_fill()
     circle(55*x)
     end_fill()
+    hideturtle()
+   
+    #text for the 'H' in the middle of the sign
     penup()
     setheading(0)
-    forward((-70*x - 25*x))
+    forward((-60*x - 25*x))
     setheading(90)
-    forward(-70*x)
+    forward(-50*x)
     color('#228B22')
     write('H', font=('Arial', int(90*x), 'normal'))
 
@@ -428,7 +438,7 @@ def map_design():
 def mapSigns():
     penup()
     goto(40,-110)
-    stopsign(0.2)
+    stopsign(0.6) # xio updated
     goto(200, 30)
     danger(.4)
     goto(240,-110)
